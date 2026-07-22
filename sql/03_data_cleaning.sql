@@ -5,13 +5,26 @@
    03_data_cleaning.sql
 
    Purpose:
-   - Transform raw PaySim data
-   - Create analysis-ready transaction table
+   - Clean PaySim raw transaction data
+   - Remove invalid records
+   - Create analytics-ready transaction table
+
+   Database:
+   PostgreSQL
 ========================================================== */
 
 
+-- Remove previous table if exists
+
 DROP TABLE IF EXISTS transactions_clean;
 
+
+
+/*
+   Create cleaned transaction table
+
+   One row = one financial transaction
+*/
 
 CREATE TABLE transactions_clean AS
 
@@ -39,48 +52,82 @@ SELECT
 
     isFraud AS fraud_flag,
 
-    isFlaggedFraud AS system_flagged_fraud,
+    isFlaggedFraud AS system_flagged_fraud
 
 
-    CASE
-        WHEN amount >= 100000 THEN 'HIGH_VALUE'
-        WHEN amount >= 10000 THEN 'MEDIUM_VALUE'
-        ELSE 'LOW_VALUE'
-    END AS transaction_value_category,
-
-
-    CASE
-        WHEN type IN ('TRANSFER','CASH_OUT')
-        THEN 'RISKY_TRANSACTION'
-        ELSE 'NORMAL_TRANSACTION'
-    END AS transaction_risk_category
-
-
-FROM paysim_raw;
+FROM paysim_raw
 
 
 
--- Indexes for faster analysis
+-- Remove invalid transactions
 
-CREATE INDEX idx_transactions_type
-ON transactions_clean(transaction_type);
+WHERE amount > 0
 
+AND nameOrig IS NOT NULL
 
-CREATE INDEX idx_transactions_fraud
-ON transactions_clean(fraud_flag);
-
-
-CREATE INDEX idx_transactions_amount
-ON transactions_clean(amount);
+AND nameDest IS NOT NULL;
 
 
 
--- Validation checks
+/*
+ Data quality checks
+*/
 
-SELECT COUNT(*) AS total_transactions
+
+-- Total cleaned records
+
+SELECT COUNT(*) AS cleaned_transactions
 FROM transactions_clean;
 
 
+
+-- Fraud cases
+
+SELECT 
+    SUM(fraud_flag) AS fraud_transactions
+FROM transactions_clean;
+
+
+
+-- Check missing values
+
+SELECT
+
+COUNT(*) FILTER (WHERE sender_account IS NULL) AS missing_sender,
+
+COUNT(*) FILTER (WHERE receiver_account IS NULL) AS missing_receiver,
+
+COUNT(*) FILTER (WHERE amount IS NULL) AS missing_amount
+
+FROM transactions_clean;
+
+
+
+-- Sample cleaned data
+
 SELECT *
 FROM transactions_clean
-LIMIT 5;
+LIMIT 10;
+
+
+
+/*
+ Index creation for faster analysis
+*/
+
+CREATE INDEX idx_transactions_clean_fraud
+ON transactions_clean(fraud_flag);
+
+
+CREATE INDEX idx_transactions_clean_type
+ON transactions_clean(transaction_type);
+
+
+CREATE INDEX idx_transactions_clean_amount
+ON transactions_clean(amount);
+
+
+CREATE INDEX idx_transactions_clean_sender
+ON transactions_clean(sender_account);
+
+
