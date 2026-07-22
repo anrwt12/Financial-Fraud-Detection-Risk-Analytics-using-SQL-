@@ -1,0 +1,23 @@
+## Dataset Download
+
+The PaySim dataset is not included in this repository because of its large size.
+
+Download the dataset from:
+
+Kaggle:
+https://www.kaggle.com/datasets/ealaxi/paysim1
+
+File used in this project:
+
+PS_20174392719_1491204439457_log.csv
+
+After downloading, rename the file:
+
+paysim_transactions.csv
+
+Place it inside:
+
+Dataset/
+└── paysim_transactions.csv
+
+The dataset is then imported into PostgreSQL for analysis.
