@@ -130,4 +130,13 @@ ON transactions_clean(amount);
 CREATE INDEX idx_transactions_clean_sender
 ON transactions_clean(sender_account);
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+cleaned_transactions
+--------------------
+6362620
+
+
+fraud_transactions
+------------------
+8213
 
