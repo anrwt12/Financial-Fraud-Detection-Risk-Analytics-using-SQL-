@@ -93,8 +93,3 @@ The dataset is used for:
 
 ---
 
-## Important Note
-
-This dataset is **synthetically generated** and does not contain real customer information.
-
-It is used only for educational purposes, portfolio projects, and analytical demonstrations.
