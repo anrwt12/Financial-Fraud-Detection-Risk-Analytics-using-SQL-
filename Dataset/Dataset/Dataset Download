@@ -1,23 +1,52 @@
-## Dataset Download
+# PaySim Dataset
 
-The PaySim dataset is not included in this repository because of its large size.
+## Overview
 
-Download the dataset from:
+This project uses the **PaySim Synthetic Financial Dataset for Fraud Detection**.
 
-Kaggle:
+The dataset simulates mobile money transactions and is used to build a financial fraud detection and risk analytics system using SQL.
+
+Dataset Source:
+
+[Kaggle - Synthetic Financial Datasets For Fraud Detection (PaySim)](https://www.kaggle.com/datasets/ealaxi/paysim1)
+
+---
+
+## Dataset Information
+
+| Attribute | Details |
+|-----------|---------|
+| Dataset Name | PaySim Synthetic Financial Dataset |
+| Source | Kaggle |
+| Records | 6,362,620 transactions |
+| Columns | 11 |
+| Domain | FinTech / Mobile Banking |
+| Target Variable | `isFraud` |
+
+---
+
+## Dataset Columns
+
+| Column | Description |
+|--------|-------------|
+| step | Time step representing transaction hour |
+| type | Transaction type (CASH_IN, CASH_OUT, DEBIT, PAYMENT, TRANSFER) |
+| amount | Transaction amount |
+| nameOrig | Sender account ID |
+| oldbalanceOrg | Sender balance before transaction |
+| newbalanceOrig | Sender balance after transaction |
+| nameDest | Receiver account ID |
+| oldbalanceDest | Receiver balance before transaction |
+| newbalanceDest | Receiver balance after transaction |
+| isFraud | Fraud transaction indicator |
+| isFlaggedFraud | System flagged fraud indicator |
+
+---
+
+## Download Instructions
+
+1. Download the dataset from Kaggle:
+
 https://www.kaggle.com/datasets/ealaxi/paysim1
 
-File used in this project:
-
-PS_20174392719_1491204439457_log.csv
-
-After downloading, rename the file:
-
-paysim_transactions.csv
-
-Place it inside:
-
-Dataset/
-└── paysim_transactions.csv
-
-The dataset is then imported into PostgreSQL for analysis.
+2. Download:
