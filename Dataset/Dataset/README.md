@@ -2,88 +2,99 @@
 
 ## Overview
 
-This project uses the PaySim Synthetic Financial Dataset for Fraud Detection.
-
-The dataset simulates financial transactions from a mobile payment system and is used to analyze fraudulent transaction patterns.
-
-## Dataset Information
-
-- Dataset: PaySim Synthetic Financial Dataset
-- Records: 6,362,620 transactions
-- Columns: 11
-- Target Column: isFraud
-
-## Columns
-
-| Column | Description |
-|---|---|
-| step | Time step |
-| type | Transaction type |
-| amount | Transaction amount |
-| nameOrig | Sender account |
-| oldbalanceOrg | Sender balance before transaction |
-| newbalanceOrig | Sender balance after transaction |
-| nameDest | Receiver account |
-| oldbalanceDest | Receiver balance before transaction |
-| newbalanceDest | Receiver balance after transaction |
-| isFraud | Fraud indicator |
-| isFlaggedFraud | System flagged fraud |
-
-## Note
-
-The original CSV file is not stored in GitHub because of its large size. It is downloaded separately and used for SQL analysis.
-
-
-# PaySim Dataset
-
-## Overview
-
 This project uses the **PaySim Synthetic Financial Dataset for Fraud Detection**.
 
-The dataset simulates mobile money transactions and is used to build a financial fraud detection and risk analytics system using SQL.
+PaySim is a synthetic mobile money transaction dataset created to simulate real-world financial transactions. It is widely used for fraud detection research and analytics because it contains realistic transaction behavior and fraudulent activity patterns.
 
-Dataset Source:
+The dataset is used in this project to build a **Financial Fraud Detection & Risk Analytics System using SQL**, including data cleaning, exploratory analysis, fraud pattern identification, customer risk analysis, and business reporting.
 
-[Kaggle - Synthetic Financial Datasets For Fraud Detection (PaySim)](https://www.kaggle.com/datasets/ealaxi/paysim1)
+---
+
+## Dataset Source
+
+The original dataset is available on Kaggle:
+
+[PaySim Synthetic Financial Dataset - Kaggle](https://www.kaggle.com/datasets/ealaxi/paysim1)
 
 ---
 
 ## Dataset Information
 
-| Attribute | Details |
-|-----------|---------|
-| Dataset Name | PaySim Synthetic Financial Dataset |
-| Source | Kaggle |
-| Records | 6,362,620 transactions |
-| Columns | 11 |
-| Domain | FinTech / Mobile Banking |
-| Target Variable | `isFraud` |
+| Attribute       | Details                            |
+| --------------- | ---------------------------------- |
+| Dataset Name    | PaySim Synthetic Financial Dataset |
+| Source          | Kaggle                             |
+| Domain          | FinTech / Mobile Banking           |
+| Records         | 6,362,620 transactions             |
+| Columns         | 11                                 |
+| File Name       | paysim_transactions.csv            |
+| Target Variable | isFraud                            |
 
 ---
 
 ## Dataset Columns
 
-| Column | Description |
-|--------|-------------|
-| step | Time step representing transaction hour |
-| type | Transaction type (CASH_IN, CASH_OUT, DEBIT, PAYMENT, TRANSFER) |
-| amount | Transaction amount |
-| nameOrig | Sender account ID |
-| oldbalanceOrg | Sender balance before transaction |
-| newbalanceOrig | Sender balance after transaction |
-| nameDest | Receiver account ID |
-| oldbalanceDest | Receiver balance before transaction |
-| newbalanceDest | Receiver balance after transaction |
-| isFraud | Fraud transaction indicator |
-| isFlaggedFraud | System flagged fraud indicator |
+| Column         | Description                                                    |
+| -------------- | -------------------------------------------------------------- |
+| step           | Time step representing transaction hour                        |
+| type           | Transaction type (CASH_IN, CASH_OUT, DEBIT, PAYMENT, TRANSFER) |
+| amount         | Transaction amount                                             |
+| nameOrig       | Sender account ID                                              |
+| oldbalanceOrg  | Sender balance before transaction                              |
+| newbalanceOrig | Sender balance after transaction                               |
+| nameDest       | Receiver account ID                                            |
+| oldbalanceDest | Receiver balance before transaction                            |
+| newbalanceDest | Receiver balance after transaction                             |
+| isFraud        | Fraud transaction indicator (Target Variable)                  |
+| isFlaggedFraud | System flagged fraud indicator                                 |
 
 ---
 
 ## Download Instructions
 
-1. Download the dataset from Kaggle:
+The original dataset is not stored in this repository because GitHub has file size limitations.
 
-https://www.kaggle.com/datasets/ealaxi/paysim1
+Download the dataset from Kaggle:
 
-2. Download:
+[Download PaySim Dataset](https://www.kaggle.com/datasets/ealaxi/paysim1)
 
+After downloading:
+
+1. Extract the ZIP file.
+2. Rename the CSV file:
+
+```
+paysim_transactions.csv
+```
+
+3. Place the file inside:
+
+```
+Financial-Fraud-Detection-Risk-Analytics-using-SQL-
+│
+└── Dataset/
+    └── paysim_transactions.csv
+```
+
+---
+
+## Usage in Project
+
+The dataset is used for:
+
+* Data exploration and profiling
+* Transaction volume analysis
+* Fraud rate analysis
+* Fraud pattern detection
+* Customer risk segmentation
+* Transaction monitoring rules
+* SQL-based fraud analytics
+* Business insight generation
+
+---
+
+## Important Note
+
+This dataset is **synthetically generated** and does not contain real customer information.
+
+It is used only for educational purposes, portfolio projects, and analytical demonstrations.
