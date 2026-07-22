@@ -2,7 +2,7 @@
    Financial Fraud Detection & Risk Analytics using SQL
 
    File:
-   02_data_cleaning.sql
+   03_data_cleaning.sql
 
    Purpose:
    - Transform raw PaySim data
