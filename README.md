@@ -100,6 +100,28 @@ https://www.kaggle.com/datasets/ealaxi/paysim1
 
 ---
 
+# Project Structure
+
+```text
+Financial-Fraud-Detection-Risk-Analytics-using-SQL/
+│
+├── Dataset/
+│   └── paysim.csv
+│
+├── sql/
+│   ├── 01_schema.sql
+│   ├── 02_data_import.sql
+│   ├── 03_data_cleaning.sql
+│   ├── 04_data_quality_checks.sql
+│   ├── 05_fraud_analysis.sql
+│   ├── 06_customer_risk_analysis.sql
+│   ├── 07_transaction_analysis.sql
+│   └── 08_business_kpis.sql
+│
+├── README.md
+└── INSIGHTS.md
+```
+
 # Project Architecture
 
 ## 📂 SQL Files Overview
@@ -150,3 +172,12 @@ PaySim Dataset
 Business Insights
 ```
 
+# Key Insights
+
+This project provides insights into financial fraud patterns and customer risk through SQL-based analysis.
+
+- Identifies fraudulent transaction patterns.
+- Highlights high-risk transaction types.
+- Profiles customers based on transaction behavior.
+- Measures fraud rates using business KPIs.
+- Supports data-driven fraud monitoring and risk management.
