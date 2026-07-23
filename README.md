@@ -102,3 +102,51 @@ https://www.kaggle.com/datasets/ealaxi/paysim1
 
 # Project Architecture
 
+## 📂 SQL Files Overview
+
+| SQL File | Description |
+|----------|-------------|
+| **01_schema.sql** | Creates the database schema, tables, data types, primary keys, and constraints. |
+| **02_data_import.sql** | Imports the PaySim dataset into PostgreSQL. |
+| **03_data_cleaning.sql** | Cleans and prepares the data by handling missing values and inconsistencies. |
+| **04_data_quality_checks.sql** | Performs data validation and quality checks before analysis. |
+| **05_fraud_analysis.sql** | Detects fraud patterns, fraud rates, and suspicious transaction types. |
+| **06_customer_risk_analysis.sql** | Identifies high-risk customers and analyzes customer behavior. |
+| **07_transaction_analysis.sql** | Analyzes transaction trends, frequency, and financial patterns. |
+| **08_business_kpis.sql** | Calculates business KPIs such as fraud rate, transaction volume, and financial risk metrics. |
+
+---
+
+## 🔄 Project Workflow
+
+```text
+PaySim Dataset
+      │
+      ▼
+01_schema.sql
+      │
+      ▼
+02_data_import.sql
+      │
+      ▼
+03_data_cleaning.sql
+      │
+      ▼
+04_data_quality_checks.sql
+      │
+      ▼
+05_fraud_analysis.sql
+      │
+      ▼
+06_customer_risk_analysis.sql
+      │
+      ▼
+07_transaction_analysis.sql
+      │
+      ▼
+08_business_kpis.sql
+      │
+      ▼
+Business Insights
+```
+
